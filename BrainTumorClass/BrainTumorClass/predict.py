@@ -13,15 +13,7 @@ import zipfile
 
 print("Loading saved models...")
 
-model_path = "models/advanced_autoencoder.keras"
-zip_path = "models/advanced_autoencoder.zip"
-
-if not os.path.exists(model_path) and os.path.exists(zip_path):
-    print("Extracting compressed model...")
-    with zipfile.ZipFile(zip_path, 'r') as zip_ref:
-        zip_ref.extractall("models/")
-
-autoencoder = load_model(model_path)
+encoder = load_model("models/encoder_only.keras")
 svm = joblib.load("models/svm_model.pkl")
 pca = joblib.load("models/pca_model.pkl")
 
@@ -56,7 +48,7 @@ def predict_image(image_path):
     img = preprocess_image(image_path)
 
     # Feature extraction
-    features = extract_features(autoencoder, img)
+    features = extract_features(encoder, img)
 
     # Apply PCA
     features_pca = pca.transform(features)

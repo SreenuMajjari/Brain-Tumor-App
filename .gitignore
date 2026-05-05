@@ -11,3 +11,4 @@ __pycache__/
 temp_uploads/
 *.keras
 dataset/
+!encoder_only.keras

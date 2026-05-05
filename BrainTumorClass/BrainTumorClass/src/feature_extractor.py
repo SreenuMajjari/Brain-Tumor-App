@@ -1,12 +1,6 @@
 from tensorflow.keras.models import Model
 
-def extract_features(autoencoder, X):
-
-    encoder = Model(
-        inputs=autoencoder.input,
-        outputs=autoencoder.get_layer("bottleneck").output
-    )
-
+def extract_features(encoder, X):
+    # We now pass the pre-extracted encoder directly!
     features = encoder.predict(X)
-
     return features
