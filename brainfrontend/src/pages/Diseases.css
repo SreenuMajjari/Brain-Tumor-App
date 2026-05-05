@@ -1,0 +1,84 @@
+.diseases-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.diseases-header h1 {
+  font-size: 2.5rem;
+  color: var(--color-primary-dark);
+}
+
+.diseases-header p {
+  font-size: 1.1rem;
+  color: var(--color-primary);
+}
+
+.diseases-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.disease-card {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-top: 4px solid var(--color-secondary);
+}
+
+.disease-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.disease-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--color-primary-dark);
+}
+
+.disease-card p {
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.disease-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  background-color: var(--color-bg-alt);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
+
+.glioma-icon::after { content: '🦠'; }
+.meningioma-icon::after { content: '🧠'; }
+.pituitary-icon::after { content: '🩸'; }
+.healthy-icon::after { content: '✨'; }
+
+.disease-features {
+  list-style-type: none;
+  padding: 0;
+  border-top: 1px solid var(--color-border);
+  padding-top: 1rem;
+}
+
+.disease-features li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  color: var(--color-primary-dark);
+}
+
+.disease-features li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--color-secondary);
+  font-weight: bold;
+}
