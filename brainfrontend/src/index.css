@@ -35,14 +35,14 @@
 
 body {
   font-family: var(--font-sans);
-  background-color: var(--color-bg-alt);
-  color: var(--color-primary);
+  background-color: #050818;
+  color: #FFFFFF;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: var(--color-primary-dark);
+  color: #FFFFFF;
   font-weight: 700;
   line-height: 1.2;
 }

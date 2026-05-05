@@ -1,4 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
+import brainLogo from '../assets/brain_logo.png';
 import './Navbar.css';
 
 function Navbar() {
@@ -12,11 +13,11 @@ function Navbar() {
     <header className="navbar">
       <div className="navbar-container">
         <Link to="/" className="navbar-logo">
-          <span className="logo-icon">🧠</span> BrainCare
+          <img src={brainLogo} alt="BrainCare Logo" className="logo-img" /> BrainCare
         </Link>
         <nav className="navbar-menu">
           <Link to="/" className={`nav-link ${isActive('/')}`}>Home</Link>
-          <Link to="/dashboard" className={`nav-link ${isActive('/dashboard')}`}>Dashboard</Link>
+
           <Link to="/analysis" className={`nav-link ${isActive('/analysis')}`}>Analysis</Link>
           <Link to="/diseases" className={`nav-link ${isActive('/diseases')}`}>Diseases</Link>
         </nav>
